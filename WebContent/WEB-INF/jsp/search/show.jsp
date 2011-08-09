@@ -14,6 +14,6 @@
 		<tr><td>${tweet.fromUser }</td><td>${tweet.text }</td></tr>
 	</c:forEach>
 </table>
-<a href="/twitter-search-results">Voltar a lista de busca</a>
+<a href="..">Voltar a lista de busca</a>
 </body>
 </html>

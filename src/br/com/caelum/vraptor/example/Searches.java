@@ -6,6 +6,7 @@ import java.util.List;
 import br.com.caelum.vraptor.ioc.ApplicationScoped;
 import br.com.caelum.vraptor.ioc.Component;
 
+//Keep the words that the user created during the application scope
 @Component
 @ApplicationScoped
 public class Searches {

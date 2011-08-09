@@ -6,7 +6,10 @@
 <title>Twitter Search Results</title>
 </head>
 <body>
-	Buscas do Twitter
+
+<h1>Buscas do Twitter</h1>
+
+<p> Nesse projeto web você pode adicionar palavras que deseja procurar no twitter. Quando acessar o link que cada palavra aparecerá os ultimos tweets contendo essa palavra. </p> 
 	
 <table>
 	<thead>
@@ -19,16 +22,21 @@
 		<c:forEach items="${searchList}" var="search">
 			<tr>
 				<td>
-					<a href="/twitter-search-results/search/${search.id}">${search.word }</a>
+					<a href="search/${search.id}">${search.word }</a>
 				</td>
 				<td>
-					<a href="/twitter-search-results/search/${search.id}/edit">editar</a> 
-					<a href="/twitter-search-results/search/remove?id=${search.id}">apagar</a>
+					<a href="search/${search.id}/edit">editar</a> 
+					<a href="search/remove?id=${search.id}">apagar</a>
 				</td>
 			</tr>
 		</c:forEach>
 	</tbody>
 </table>	
-<a href="/twitter-search-results/search/create">Adicionar busca do Twitter</a>
+<a href="search/create">Adicionar busca do Twitter</a>
+<hr/>
+<h3>Informações sobre o projeto</h3>
+<b>Nome:</b> Pedro Morhy Borges Leal </br>
+<b>Numero USP:</b> 5893830 </br>
+<b>Código fonte do projeto:</b> <a href="https://github.com/pedrombl/engsoft-vraptor-studies">github</a> / <a href="arquivos/codigo-pedroleal-engsoft.zip">download</a> </br>
 </body>
 </html>

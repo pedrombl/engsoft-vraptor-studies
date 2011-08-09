@@ -22,6 +22,7 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 
+//Controller of the searches
 @Resource
 public class SearchController {
 	
@@ -41,6 +42,7 @@ public class SearchController {
 	public void create() {
 	}
 	
+	
 	public void save(final Search search) {
 		searches.add(search);
 		result.redirectTo(SearchController.class).index();
@@ -51,10 +53,12 @@ public class SearchController {
 		return searches.getSearch(id);
 	}
 	
+	@Path("/search/{search.id}/update")
 	public void update(Search search) {
 		searches.update(search);
 		result.redirectTo(SearchController.class).index();
 	}
+
 
 	public void remove(Long id) {
 		Search search = searches.getSearch(id);

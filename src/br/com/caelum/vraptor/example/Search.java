@@ -9,6 +9,8 @@ import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 
+// Here, each search records the word that the user wants to use
+// and how to search this word
 public class Search {
 	
 	private String word;
@@ -34,6 +36,7 @@ public class Search {
 		this.id = id;
 	}
 	
+	// Return the last 5 tweets mentioning the word "word"
 	public List<Tweet> getTweets() throws TwitterException {
 		Twitter twitter = new TwitterFactory().getInstance();
 		QueryResult result = twitter.search(new Query(word));

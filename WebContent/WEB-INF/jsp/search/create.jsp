@@ -7,7 +7,7 @@
 <title>Adicionar</title>
 </head>
 <body>
-<form action="save">
+<form action="save" method="post">
 		<fieldset>
 			<legend>Adicionar nova palavra de procura</legend>
 			<label for="word">Palavra:</label>
