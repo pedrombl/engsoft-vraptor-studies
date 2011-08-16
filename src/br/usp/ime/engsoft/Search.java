@@ -1,6 +1,10 @@
-package br.com.caelum.vraptor.example;
+package br.usp.ime.engsoft;
 
 import java.util.List;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Entity;
 
 import twitter4j.Query;
 import twitter4j.QueryResult;
@@ -11,13 +15,16 @@ import twitter4j.TwitterFactory;
 
 // Here, each search records the word that the user wants to use
 // and how to search this word
+
+@Entity
 public class Search {
 	
+	@Id @GeneratedValue
+	private Long id;
 	private String word;
-	private long id;
+
 
 	public Search() {
-		this.id = System.currentTimeMillis();
 	}
 	
 	public String getWord() {
@@ -28,11 +35,11 @@ public class Search {
 		this.word = word;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 	
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	

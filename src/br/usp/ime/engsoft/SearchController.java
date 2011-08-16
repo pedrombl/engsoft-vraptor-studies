@@ -14,29 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package br.com.caelum.vraptor.example;
+package br.usp.ime.engsoft;
 
 import java.util.List;
 
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
+import br.usp.ime.engsoft.dao.SearchDao;
 
 //Controller of the searches
 @Resource
 public class SearchController {
 	
 	private final Result result;
-	private Searches searches;
+	private SearchDao searchDao;
 
-	public SearchController(Result result, Searches searches) {
+	public SearchController(Result result, SearchDao searchDao) {
 		this.result = result;
-		this.searches = searches;
+		this.searchDao = searchDao;
 	}
 
 	@Path("/")
 	public List<Search> index() {
-		return searches.getList();
+		return searchDao.getList();
 	}
 	
 	public void create() {
@@ -44,31 +45,31 @@ public class SearchController {
 	
 	
 	public void save(final Search search) {
-		searches.add(search);
+		searchDao.save(search);
 		result.redirectTo(SearchController.class).index();
 	}
 	
 	@Path("/search/{id}/edit")
 	public Search edit(Long id) {
-		return searches.getSearch(id);
+		return searchDao.get(id);
 	}
 	
 	@Path("/search/{search.id}/update")
 	public void update(Search search) {
-		searches.update(search);
+		searchDao.update(search);
 		result.redirectTo(SearchController.class).index();
 	}
 
 
 	public void remove(Long id) {
-		Search search = searches.getSearch(id);
-		searches.remove(search);
+		Search search = searchDao.get(id);
+		searchDao.remove(search);
 		result.redirectTo(SearchController.class).index();
 	}
 	
 	@Path("/search/{id}")
 	public Search show(Long id) {
-		return searches.getSearch(id);
+		return searchDao.get(id);
 	}
 	
 	
