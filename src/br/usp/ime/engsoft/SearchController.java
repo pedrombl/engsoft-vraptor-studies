@@ -26,7 +26,7 @@ import br.usp.ime.engsoft.dao.SearchDao;
 //Controller of the searches
 @Resource
 public class SearchController {
-	
+
 	private final Result result;
 	private SearchDao searchDao;
 
@@ -39,39 +39,35 @@ public class SearchController {
 	public List<Search> index() {
 		return searchDao.getList();
 	}
-	
+
 	public void create() {
 	}
-	
-	
+
 	public void save(final Search search) {
 		searchDao.save(search);
 		result.redirectTo(SearchController.class).index();
 	}
-	
+
 	@Path("/search/{id}/edit")
 	public Search edit(Long id) {
 		return searchDao.get(id);
 	}
-	
+
 	@Path("/search/{search.id}/update")
 	public void update(Search search) {
 		searchDao.update(search);
 		result.redirectTo(SearchController.class).index();
 	}
 
-
 	public void remove(Long id) {
 		Search search = searchDao.get(id);
 		searchDao.remove(search);
 		result.redirectTo(SearchController.class).index();
 	}
-	
+
 	@Path("/search/{id}")
 	public Search show(Long id) {
 		return searchDao.get(id);
 	}
-	
-	
 
 }

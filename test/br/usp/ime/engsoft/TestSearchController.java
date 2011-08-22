@@ -49,7 +49,7 @@ public class TestSearchController {
 		Search search = new Search();
 
 		controller.save(search);
-		verify(dao).getList(); //method that is called when called index method
+		verify(dao).getList(); // method that is called when called index method
 	}
 
 	@Test
@@ -66,46 +66,47 @@ public class TestSearchController {
 		controller.update(search);
 		verify(dao).update(search);
 	}
-	
+
 	@Test
 	public void shouldRedirectToIndexAfterUpdate() throws Exception {
 		Search search = new Search();
 		controller.update(search);
 		verify(dao).getList();
 	}
-	
+
 	@Test
 	public void shouldGetCorrectSearchObjectBeforeRemovingIt() throws Exception {
 		Long id = new Long(1);
 		Search search = new Search();
 		when(dao.get(id)).thenReturn(search);
-		
+
 		controller.remove(id);
 		verify(dao).get(id);
 	}
-	
+
 	@Test
 	public void shouldRemoveSearchObjectWithSameId() throws Exception {
 		Long id = new Long(1);
 		Search search = new Search();
 		when(dao.get(id)).thenReturn(search);
-		
+
 		controller.remove(id);
 		verify(dao).remove(search);
 	}
-	
+
 	@Test
 	public void shouldRedirectToIndexAfterRemove() throws Exception {
 		Long id = new Long(1);
 		Search search = new Search();
 		when(dao.get(id)).thenReturn(search);
-		
+
 		controller.remove(id);
 		verify(dao).getList();
 	}
-	
+
 	@Test
-	public void shouldReturnCorrectSearchWhenCalledShowMethod() throws Exception {
+	public void shouldReturnCorrectSearchWhenCalledShowMethod()
+			throws Exception {
 		Long id = new Long(1);
 		controller.show(id);
 		verify(dao).get(id);

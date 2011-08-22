@@ -8,7 +8,7 @@ import org.hibernate.impl.CriteriaImpl;
 import br.usp.ime.engsoft.Search;
 
 @SuppressWarnings("serial")
-public class DummyCriteria extends CriteriaImpl{
+public class DummyCriteria extends CriteriaImpl {
 
 	private List<Search> list;
 
@@ -16,7 +16,7 @@ public class DummyCriteria extends CriteriaImpl{
 		super(null, null);
 		this.list = list;
 	}
-	
+
 	public List<Search> list() throws HibernateException {
 		return list;
 	}

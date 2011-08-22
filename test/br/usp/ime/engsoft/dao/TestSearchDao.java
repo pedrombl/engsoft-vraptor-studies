@@ -104,9 +104,9 @@ public class TestSearchDao {
 
 		DummyCriteria criteria = new DummyCriteria(list);
 		when(session.createCriteria(Search.class)).thenReturn(criteria);
-		
+
 		assertEquals(2, dao.getList().size());
-		
+
 	}
 
 	@Test

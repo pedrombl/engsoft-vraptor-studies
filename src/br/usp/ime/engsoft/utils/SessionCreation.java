@@ -6,19 +6,27 @@ import org.hibernate.cfg.Configuration;
 
 public class SessionCreation {
 
-
 	private static SessionFactory sessionFactory = null;
-	
+	private static Configuration conf = null;
+
 	public static Session getSession() {
-		if(sessionFactory == null)
+		if (sessionFactory == null)
 			createSessionFactory();
 		return sessionFactory.openSession();
 	}
-	
 
 	private static void createSessionFactory() {
-		Configuration conf = new Configuration();
+		if (conf == null)
+			createConf();
 		conf.configure();
 		sessionFactory = conf.buildSessionFactory();
+	}
+
+	private static void createConf() {
+		conf = new Configuration();
+	}
+
+	public static void setConf(Configuration conf) {
+		SessionCreation.conf = conf;
 	}
 }

@@ -16,34 +16,34 @@ public class SearchDao {
 	public SearchDao() {
 		this.session = SessionCreation.getSession();
 	}
-	
+
 	public SearchDao(Session session) {
 		this.session = session;
 	}
-	
+
 	public void save(Search search) {
 		Transaction tx = session.beginTransaction();
 		session.save(search);
 		tx.commit();
 	}
-	
+
 	public void remove(Search search) {
 		Transaction tx = session.beginTransaction();
 		session.delete(search);
-		tx.commit();		
+		tx.commit();
 	}
-	
+
 	public void update(Search search) {
 		Transaction tx = session.beginTransaction();
 		session.update(search);
-		tx.commit();			
+		tx.commit();
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public List<Search> getList() {
 		return session.createCriteria(Search.class).list();
 	}
-	
+
 	public Search get(Long id) {
 		return (Search) this.session.load(Search.class, id);
 	}
