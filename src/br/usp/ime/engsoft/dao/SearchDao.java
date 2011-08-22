@@ -17,6 +17,10 @@ public class SearchDao {
 		this.session = SessionCreation.getSession();
 	}
 	
+	public SearchDao(Session session) {
+		this.session = session;
+	}
+	
 	public void save(Search search) {
 		Transaction tx = session.beginTransaction();
 		session.save(search);
