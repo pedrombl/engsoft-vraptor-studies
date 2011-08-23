@@ -5,15 +5,33 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style type="text/css"><%@include file="../../css/style.css" %></style>
 <title>Resultados</title>
 </head>
 <body>
+<div id="all">
+<div id="content">
+<h1>Buscas do Twitter</h1>
+
 <h3>${search.word}</h3>
 <table>
+	<% 
+		int i = 0;
+		String type = "";
+	%>
 	<c:forEach items="${search.tweets}" var="tweet">
-		<tr><td>${tweet.fromUser }</td><td>${tweet.text }</td></tr>
+		<% 
+			i++;
+			if (i%2 == 0) 
+				type = "even";
+			else
+				type = "odd";
+		%>
+		<tr class="<%= type %>"><td>${tweet.fromUser }</td><td>${tweet.text }</td></tr>
 	</c:forEach>
 </table>
 <a href="..">Voltar a lista de busca</a>
+</div>
+</div>
 </body>
 </html>

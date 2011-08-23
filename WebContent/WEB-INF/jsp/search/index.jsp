@@ -3,24 +3,41 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO 639-1">
+<style type="text/css"><%@include file="../../css/style.css" %></style>
 <title>Twitter Search Results</title>
 </head>
 <body>
-
+<div id="all">
+<div id="content">
 <h1>Buscas do Twitter</h1>
 
-<p> Nesse projeto web você pode adicionar palavras que deseja procurar no twitter. Quando acessar o link que cada palavra aparecerá os ultimos tweets contendo essa palavra. </p> 
-	
+<p> Nesse projeto web você pode adicionar palavras que deseja procurar no twitter. Quando acessar o link que cada palavra aparecerá os ultimos tweets contendo essa palavra. </p>
+ 
+<div id="leftcontent">
 <table>
 	<thead>
 		<tr>
 			<th>Palavra buscada</th>
-			<th>Resultados</th>
+			<th>Opções</th>
 		</tr>
+		
 	</thead>
 	<tbody>
+		<% 
+			int i = 0;
+			String type = "";
+		%>
+		
 		<c:forEach items="${searchList}" var="search">
-			<tr>
+			<% 
+				i++;
+				if (i%2 == 0) 
+					type = "even";
+				else
+					type = "odd";
+			%>
+			
+			<tr class="<%=type %>">
 				<td>
 					<a href="search/${search.id}">${search.word }</a>
 				</td>
@@ -31,12 +48,19 @@
 			</tr>
 		</c:forEach>
 	</tbody>
+
 </table>	
+
 <a href="search/create">Adicionar busca do Twitter</a>
-<hr/>
-<h3>Informações sobre o projeto</h3>
-<b>Nome:</b> Pedro Morhy Borges Leal <br/>
-<b>Numero USP:</b> 5893830 <br/>
-<b>Código fonte do projeto:</b> <a href="https://github.com/pedrombl/engsoft-vraptor-studies/tree/v2.0">github</a> / <a href="arquivos/codigo-pedroleal-engsoft-2.zip">download</a> <br/>
+</div>
+<div id="rightcontent">
+<div id="rightcontente_inside">
+	<h3>Informações sobre o projeto</h3>
+	<b>Nome:</b> Pedro Morhy Borges Leal <br/>
+	<b>Numero USP:</b> 5893830 <br/>
+	<b>Código fonte do projeto:</b> <a href="https://github.com/pedrombl/engsoft-vraptor-studies/tree/v2.0">github</a> / <a href="arquivos/codigo-pedroleal-engsoft-2.zip">download</a> <br/>
+</div>
+</div>
+</div>
 </body>
 </html>

@@ -4,9 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<style type="text/css"><%@include file="../../css/style.css" %></style>
 <title>Adicionar</title>
 </head>
 <body>
+<div id="all">
+<div id="content">
+
+<h1>Buscas do Twitter</h1>
+
 <form action="save" method="post">
 		<fieldset>
 			<legend>Adicionar nova palavra de procura</legend>
@@ -15,5 +21,7 @@
 			<button type="submit">Enviar</button>
 		</fieldset>
 </form>
+</div>
+</div>
 </body>
 </html>

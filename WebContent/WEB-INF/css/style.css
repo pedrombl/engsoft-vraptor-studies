@@ -1,0 +1,63 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: #D3D3D3;	
+}
+
+#all{
+	width: 760px;
+	margin: auto;	
+}
+
+#content {
+	width: 100%;
+	background-color: white;
+	border-style: solid;
+	border: 1px solid gray;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+	display: table;
+}
+
+h1 {
+	background: #EDEDED;
+	padding: 5px 5px 5px 10px;
+	font-size: 1.3em;
+	font-family: "Times New Roman", Times, serif;
+	color: #818080;
+	font-weight: normal;
+}
+
+#leftcontent {
+	float: left;
+	width: 50%;	
+	
+}
+
+#rightcontent {
+	float: right;
+	width: 50%;	
+	margin: auto;
+}
+
+h3 {
+	margin: 0 0 5px 0;
+}
+
+th {
+	border-style: solid;
+	border-width: 1px;
+}
+
+tr.odd {
+	background: #ffc;
+}
+
+tr.even {
+	background: #eee;
+}
+
+table {
+	margin-bottom: 10px;
+}
