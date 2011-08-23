@@ -58,7 +58,7 @@
 	<h3>Informações sobre o projeto</h3>
 	<b>Nome:</b> Pedro Morhy Borges Leal <br/>
 	<b>Numero USP:</b> 5893830 <br/>
-	<b>Código fonte do projeto:</b> <a href="https://github.com/pedrombl/engsoft-vraptor-studies/tree/v2.0">github</a> / <a href="arquivos/codigo-pedroleal-engsoft-2.zip">download</a> <br/>
+	<b>Código fonte do projeto:</b> <a href="https://github.com/pedrombl/engsoft-vraptor-studies/tree/v3.0">github</a> / <a href="http://www.ime.usp.br/~pedrombl/codigo-pedroleal-engsoft-final.zip">download</a> <br/>
 </div>
 </div>
 </div>
